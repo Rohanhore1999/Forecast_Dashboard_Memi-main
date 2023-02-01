@@ -1,0 +1,162 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block title %}
+  Forecast Dashboard
+{% endblock %}
+<style>
+  .input-group-append {
+  cursor: pointer;
+  }
+</style>
+{% block content %}
+  <div class="container">
+    <div class="row mb-3">
+      <div class="card" style="background-color:#1b7094;">
+        <div class="card-body">
+          <form method="get" class="row row-cols-lg-auto g-3 align-items-center">
+            <div class="col">
+              <div class="input-group mb-3">
+                <label class="input-group-text" for="id_state">Select State :</label>
+                <select class="form-select" id="id_state" name="states">
+                  <!-- <option value="">All</option> -->
+                  {% for k, v in states.items %}
+                    <option value="{{v}}" {% if request.GET.state == v  %} selected="selected" {% endif %}>{{k}}</option>
+                  {% endfor %}
+                </select>
+              </div>
+            </div>
+        
+
+            <div class="row mb-3">
+              <div class="col">
+                <section class="container">
+                  <label class="input-group date" for="id_state">Date:</label>
+                      <div class="input-group date" id="datepicker">
+                        <input id="endDate" name="refdate" class="form-control" type="date" value="{{request.GET.refdate}}"/>
+                        <span class="input-group-append">
+                          <!-- <span class="input-group-text bg-light d-block"> -->
+                            <!-- <i class="fa fa-calendar"></i> -->
+                          </span>
+                      </div>
+                </section>
+              </div>
+            </div>
+
+            <div class="row mb-3">
+            <div class="col">
+              <div class="input-group">
+                <label class="input-group-text" for="id_ftype">Select Forecast :</label>
+                <select class="select_field_class" multiple="multiple" name="ftype" id="id_ftype">
+                  <option value="">Select Forecast</option>
+                  {% for f in fcast_types %}
+                    <option value="{{f}}" {% if f in f_type_selected  %} selected="" {% endif %}>{{f}}</option>
+                  {% endfor %}
+                </select>
+              </div>
+            </div>
+          </div>
+
+          
+            <div class="col-12" align="center">
+              <button type="submit" class="btn btn-primary">Getdata</button>
+            </div>
+
+            
+          
+            
+
+          
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content">
+          
+            <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+          
+          <div class="modal-body">
+            <div class="container-fluid">
+              <div class="row h-100">
+                <div class="col h-100">
+                <canvas id="expand" class="forecastchart" width="1000" height="300"></canvas>
+              </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#exampleModal"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle" viewBox="0 0 16 16">
+      <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+      <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+    </svg>
+      Expand Chart
+    </button> 
+    
+    
+    <div class="card-body" style="background-color:#dae0e3;">
+    <div class="col">
+        <canvas id="forecastChart" width="900" height="200"></canvas>
+        <select onchange="changeChart(this)">
+        <optgroup label="Select Chart"></optgroup>
+        <option value="line">Line</option>
+        <option value="pie">Pie</option>
+        <option value="bar">Bar</option>
+        <option value="radar">Radar</option>
+        </select>
+    </div>
+    </div>
+
+
+  
+    <!-- <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">date</th>
+          <th scope="col">forecast_type</th>
+          <th scope="col">States</th>
+          <th scope="col">block1</th>
+          <th scope="col">block2</th>
+          <th scope="col">block3</th>
+          <th scope="col">block4</th>
+          <th scope="col">block5</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for demand in demand_instance %}  
+        <tr>
+          <td><input type="text" class="form-control" value="{{demand_instance.date}}"></td>
+          <td><input type="text" class="form-control" value="{{demand_instance.forecast_type}}"></td>
+          <td><input type="text" class="form-control" value="{{demand_instance.loc_ID}}"></td>
+          <td><input type="text" class="form-control" name="block1" value="{{demand_instance.block1}}"></td>
+          <td><input type="text" class="form-control" name="block2" value="{{demand_instance.block2}}"></td>
+          <td><input type="text" class="form-control" name="block3" value="{{demand_instance.block3}}"></td>
+          <td><input type="text" class="form-control" name="block4" value="{{demand_instance.block4}}"></td>
+          <td><input type="text" class="form-control" name="block5" value="{{demand_instance.block5}}"></td>
+          <td><button type="submit" class="btn btn-primary btn-sm">Submit</button></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+</table> -->
+
+</form>
+
+    
+
+<script>
+    $(document).ready(function () {
+      $('#id_ftype').select2();
+    });
+</script>
+{% include 'partials/forecast.html' %}
+
+{% endblock %}
+

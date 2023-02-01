@@ -1,0 +1,135 @@
+<script type="text/javascript">
+  datasets = JSON.parse(`{{datasets|escapejs}}`)
+  labels = JSON.parse(`{{labels}}`)
+
+  console.log(datasets);
+
+  const config = {
+    type: "line",
+    data: {
+      labels: labels,
+      datasets: datasets
+    },
+    options: {
+      responsive: true,
+      legend: {
+        position: "top"
+      },
+      title: {
+        position: "top",
+        display: true
+      },
+      tooltips: {
+        mode: "index",
+        intersect: false
+      },
+       
+      elements: {
+        point: {
+          radius: 0,
+          hoverRadius: 0
+        }
+      },
+      interaction: {
+        Mode: "nearest",
+        axis: "xy",
+        intersect: false
+      },
+    }
+  };
+ 
+  const config2 = {
+    type: "bar",
+    data: {
+      labels: labels,
+      datasets: datasets
+    } 
+  }; 
+  
+
+  const config3 = {
+    type: "pie",
+    data: {
+      labels: labels,
+      datasets: datasets
+    }
+    
+  };
+
+  const config4 = {
+    type: "radar",
+    data: {
+      labels: labels,
+      datasets: datasets
+    }
+  };  
+  var modal_options = {
+    type: "line",
+    data: {
+      labels: labels,
+      datasets: datasets
+    },
+    options: {
+      responsive: true,
+      // maintainAspectRatio: true,
+      legend: {
+        position: "top"
+      },
+      title: {
+        position: "top",
+        display: true
+      },
+      tooltips: {
+        mode: "index",
+        intersect: false
+      },
+       
+      elements: {
+        point: {
+          radius: 0,
+          hoverRadius: 0
+        }
+      },
+      interaction: {
+        Mode: "nearest",
+        axis: "xy",
+        intersect: false
+      },
+    }
+  };
+let ctx = document.getElementById("forecastChart").getContext("2d");
+let forecastChart = new Chart(document.getElementById('forecastChart'),config);
+var modal_ctx = document.getElementById('expand').getContext('2d');
+var modal_chart = new Chart(modal_ctx ,modal_options);
+
+function changeChart(chartType) {
+  console.log(chartType.value);
+  forecastChart.destroy();
+  
+  if(chartType.value === 'line'){
+  forecastChart = new Chart(
+    document.getElementById('forecastChart'),
+    config
+  );
+ } 
+ if(chartType.value === 'bar'){
+  forecastChart = new Chart(
+    document.getElementById('forecastChart'),
+    config2
+  );
+ } 
+ if(chartType.value === 'pie'){
+  forecastChart = new Chart(
+    document.getElementById('forecastChart'),
+    config3
+  );
+ } 
+ if(chartType.value === 'radar'){
+  forecastChart = new Chart(
+    document.getElementById('forecastChart'),
+    config4
+  );
+ } 
+}
+
+</script>

@@ -1,0 +1,12 @@
+python manage.py makemigrations
+
+python manage.py migrate
+
+python -m pip install -U pip
+
+python -m pip install -r requirements.txt
+
+python -m pip freeze > requirements.txt
+
+python manage.py runserver 0.0.0.0:80
+

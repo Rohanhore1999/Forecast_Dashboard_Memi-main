@@ -1,0 +1,130 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyPackageRequirementsInspection" enabled="false" level="WARNING" enabled_by_default="false">
+      <option name="ignoredPackages">
+        <value>
+          <list size="5">
+            <item index="0" class="java.lang.String" itemvalue="google" />
+            <item index="1" class="java.lang.String" itemvalue="Django" />
+            <item index="2" class="java.lang.String" itemvalue="pandas" />
+            <item index="3" class="java.lang.String" itemvalue="django-celery-beat" />
+            <item index="4" class="java.lang.String" itemvalue="django-celery-results" />
+          </list>
+        </value>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyPep8NamingInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <option name="ignoredErrors">
+        <list>
+          <option value="N806" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyTypeCheckerInspection" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredIdentifiers">
+        <list>
+          <option value="helpcenter.models.Feedback.*" />
+          <option value="products.models.Product.*" />
+          <option value="products.views.AdminStaffRequiredMixin.*" />
+          <option value="chemicals.models.Chemical.*" />
+          <option value="accounts.models.PhoneNumber.*" />
+          <option value="chemicals.models.Hazard.*" />
+          <option value="hazards.models.Hazard.objects" />
+          <option value="symbols.models.Symbol.*" />
+          <option value="chemicals.models.chemicals.Chemical.*" />
+          <option value="chemicals.models.hazards.Hazard.*" />
+          <option value="chemicals.models.symbols.Symbol.*" />
+          <option value="seller.models.sellers.UserOrganization.*" />
+          <option value="accounts.models.accounts.PhoneNumber.*" />
+          <option value="django.db.models.fields.related.OneToOneField.*" />
+          <option value="seller.models.products.Item.*" />
+          <option value="seller.models.products.Product.*" />
+          <option value="seller.models.products.Brand.*" />
+          <option value="seller.models.inventory.Brand.*" />
+          <option value="seller.models.inventory.Product.*" />
+          <option value="seller.models.inventory.Item.*" />
+          <option value="geolocation.models.Country.*" />
+          <option value="geolocation.models.State.*" />
+          <option value="geolocation.models.PostOffice.*" />
+          <option value="seller.models.inventory.Grade.*" />
+          <option value="geolocation.models.PinCode.*" />
+          <option value="pharmacy.models.PharmaProduct.*" />
+          <option value="pharmacyworld.utils.CustomPagination.*" />
+          <option value="seller.models.inquiry.Procurement.*" />
+          <option value="accounts.models.EmailAddress.*" />
+          <option value="main.models.Student.*" />
+          <option value="accounts.models.User.*" />
+          <option value="procurements.models.Procurement.*" />
+          <option value="procurements.models.Quote.*" />
+          <option value="procurements.models.Message.*" />
+          <option value="seller.models.Product.*" />
+          <option value="seller.models.Grade.*" />
+          <option value="seller.models.Brand.*" />
+          <option value="seller.models.Item.*" />
+          <option value="logs.models.SearchLog.*" />
+          <option value="django.db.models.fields.related.ForeignKey.*" />
+          <option value="students.models.Student.*" />
+          <option value="chemicals.views.hazards.HazardDetailView.*" />
+          <option value="accounts.models.Organization.*" />
+          <option value="feedback.models.FeedbackMessage.*" />
+          <option value="accounts.models.Address.*" />
+          <option value="orders.models.Cart.*" />
+          <option value="accounts.models.Hash.*" />
+          <option value="accounts.serializers.UserPhoneNumberSerializer.Meta.*" />
+          <option value="accounts.models.Verification.*" />
+          <option value="razorpay.client.Client.*" />
+          <option value="accounts.views.CustomDeviceViewSetMixin.*" />
+          <option value="company.models.Organization.*" />
+          <option value="company.models.Report.*" />
+          <option value="company.models.Year.*" />
+          <option value="years.models.Year.*" />
+          <option value="reports.models.Report.*" />
+          <option value="organizations.models.Organization.*" />
+          <option value="orgs.models.Organization.*" />
+          <option value="orgs.models.Org.*" />
+          <option value="orgs.models.State.*" />
+          <option value="orgs.models.org_type.*" />
+          <option value="orgs.models.Email.*" />
+          <option value="logs.models.AuditEntry.*" />
+          <option value="orgs.models.City.*" />
+          <option value="Assesment.models.resultModel.*" />
+          <option value="Assesment.models.QuesModel.*" />
+          <option value="rest_framework.authtoken.models.Token.*" />
+          <option value="accounts.models.Phone.*" />
+          <option value="django.contrib.auth.models.Group.*" />
+          <option value="accounts.models.Employee.*" />
+          <option value="api.employee.models.Employee.*" />
+          <option value="api.user.models.User.*" />
+          <option value="assessments.models.Examination.*" />
+          <option value="assessments.models.Category.*" />
+          <option value="accounts.users.models.User.*" />
+          <option value="accounts.employees.models.Employee.*" />
+          <option value="ERP_Backend.utils.helper.BaseModel.*" />
+          <option value="api.attendance.models.AnnualLeave.*" />
+          <option value="django.db.models.fields.DateField.*" />
+          <option value="object.__sub__" />
+          <option value="datetime.timedelta.*" />
+          <option value="api.users.models.Company.*" />
+          <option value="api.customers.models.Customer.*" />
+          <option value="api.users.serializers.BaseSignUpSerializer.Meta.*" />
+          <option value="api.users.serializers.BaseSignUpSerializer.*" />
+          <option value="api.models.DeviceInfo.*" />
+          <option value="recommend.models.Movie.*" />
+          <option value="recommend.models.MyList.*" />
+          <option value="recommend.models.Myrating.*" />
+          <option value="api.users.models.User.*" />
+          <option value="api.certify.models.MobileOTP.*" />
+          <option value="api.courses.models.Course.*" />
+          <option value="movies.models.Movie.*" />
+          <option value="movies.models.Rating.*" />
+          <option value="movies.models.WatchList.*" />
+          <option value="languages.models.Country.*" />
+          <option value="api.organizations.models.Organization.*" />
+          <option value="ERP_Backend.utils.mixins.MultiCreateMixin.*" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>
